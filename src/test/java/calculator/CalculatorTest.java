@@ -9,14 +9,15 @@ public class CalculatorTest {
     public void testCalculatorInvocation() {
         var c = new Calculator();
         assertNotNull(c);
+        assertEquals("begins with 0 on the stack", 1, c.instructions());
     }
 
     @Test
-    public void testCalculatorInput() {
+    public void testCalculatorInputNumber() {
         var c = new Calculator();
-        c.input("4");
+        c.input( new Number());
         assertEquals("add method adds length",
-            c.instructions(),
-            1);
+            1,
+            c.instructions());
     }
 }
