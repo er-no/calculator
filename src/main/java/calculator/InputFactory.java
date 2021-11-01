@@ -6,6 +6,7 @@ package calculator;
 public class InputFactory {
     private static final String[] OPERANDS = {
         "+", "-", "*", "/"
+      // 0    1    2    3
     };
     /* hide constructor */
     private InputFactory(){}
@@ -20,7 +21,11 @@ public class InputFactory {
         }
 
         if(whatOperand >= 0) {
-            return new Operand();
+            if(whatOperand == 0) return new OperandAddition();
+            if(whatOperand == 1) return new OperandSubtraction();
+            if(whatOperand == 2) return new OperandMultiplication();
+            if(whatOperand == 3) return new OperandDivision();
+            return null;
         } else {
             try {
                 int num = Integer.parseInt(token);
