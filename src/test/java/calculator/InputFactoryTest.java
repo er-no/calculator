@@ -14,7 +14,7 @@ public class InputFactoryTest {
     @Test
     public void passingOperandDoesNotYieldNumber() {
         assertTrue("operand shall not yied number",
-            InputFactory.parse("+").value() == null);
+            InputFactory.parse(InputFactory.ADD).value() == null);
     }
 
     @Test
@@ -27,41 +27,41 @@ public class InputFactoryTest {
     @Test
     public void passingSignYieldsOperandClass() {
         assertTrue("plus shall yield Operand",
-            InputFactory.parse("+").operand() != null);
+            InputFactory.parse(InputFactory.ADD).operand() != null);
         assertTrue("minus shall yield Operand",
-            InputFactory.parse("-").operand() != null);
+            InputFactory.parse(InputFactory.SUB).operand() != null);
         assertTrue("asterisk shall yield Operand",
-            InputFactory.parse("*").operand() != null);
+            InputFactory.parse(InputFactory.MUL).operand() != null);
         assertTrue("slash shall yield Operand",
-            InputFactory.parse("/").operand() != null);
+            InputFactory.parse(InputFactory.DIV).operand() != null);
     }
 
     @Test
     public void passingPlusYieldsAdditionClass() {
         assertEquals("plus shall yield OpreandAddition",
             8,
-            (int) InputFactory.parse("+").operand().evaluation(6, 2).value());
+            (int) InputFactory.parse(InputFactory.ADD).operand().evaluation(6, 2).value());
     }
 
     @Test
     public void passingMinusYieldsSubtractionClass() {
         assertEquals("plus shall yield OpreandSubtraction",
             4,
-            (int) InputFactory.parse("-").operand().evaluation(6, 2).value());
+            (int) InputFactory.parse(InputFactory.SUB).operand().evaluation(6, 2).value());
     }
 
     @Test
     public void passingAsteriskYieldsMultiplicationClass() {
         assertEquals("plus shall yield OpreandMultiplication",
             12,
-            (int) InputFactory.parse("*").operand().evaluation(6, 2).value());
+            (int) InputFactory.parse(InputFactory.MUL).operand().evaluation(6, 2).value());
     }
 
     @Test
     public void passingSlashYieldsDivisionClass() {
         assertEquals("plus shall yield OpreandDivision",
             3,
-            (int) InputFactory.parse("/").operand().evaluation(6, 2).value());
+            (int) InputFactory.parse(InputFactory.DIV).operand().evaluation(6, 2).value());
     }
 
     @Test

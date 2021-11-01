@@ -4,9 +4,14 @@ package calculator;
  * Creates suitable Input class depending on parsed String
  */
 public class InputFactory {
+    public static final String ADD = "+";
+    public static final String SUB = "-";
+    public static final String MUL = ".";
+    public static final String DIV = "/";
+
     private static final String[] OPERANDS = {
-        "+", "-", "*", "/"
-      // 0    1    2    3
+        ADD, SUB, MUL, DIV
+//index: 0    1    2    3
     };
     /* hide constructor */
     private InputFactory(){}

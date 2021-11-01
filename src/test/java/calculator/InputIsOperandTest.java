@@ -9,7 +9,7 @@ public class InputIsOperandTest {
     @Test
     public void plusIsOperand() {
         assertTrue("plusses are operands",
-        InputFactory.parse("+").operand() != null);
+        InputFactory.parse(InputFactory.ADD).operand() != null);
     }
 
     @Test
@@ -22,7 +22,7 @@ public class InputIsOperandTest {
     @Test
     public void minusIsOperand() {
         assertTrue("minuses are operands",
-        InputFactory.parse("-").operand() != null);
+        InputFactory.parse(InputFactory.SUB).operand() != null);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class InputIsOperandTest {
     @Test
     public void asteriskAreOperand() {
         assertTrue("asterisks are operands",
-        InputFactory.parse("*").operand() != null);
+        InputFactory.parse(InputFactory.MUL).operand() != null);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class InputIsOperandTest {
     @Test
     public void slashAreOperand() {
         assertTrue("slashes are operands",
-        InputFactory.parse("/").operand() != null);
+        InputFactory.parse(InputFactory.DIV).operand() != null);
     }
 
     @Test
