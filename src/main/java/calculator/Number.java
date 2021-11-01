@@ -31,10 +31,6 @@ public class Number implements Input {
         return this.value().equals(num.value());
     }
 
-    public boolean equals(Integer i) {
-        return this.value().equals(i);
-    }
-
     public boolean equals(int i) {
         return this.value().equals(i);
     }

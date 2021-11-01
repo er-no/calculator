@@ -22,17 +22,17 @@ public class InputIsNumberTest {
     }
 
     @Test
+    public void equalsWithObject() {
+        var num = new Number(42);
+        assertFalse("nonsensical to compare to arbitrary objects, should not be equal",
+            num.equals(new Calculator()));
+    }
+
+    @Test
     public void equalsWithNumber() {
         var num = new Number(1337);
         assertTrue("number objects are .equals with number objects",
             num.equals(new Number(1337)));
-    }
-
-    @Test
-    public void equalsWithInteger() {
-        var num = new Number(1337);
-        assertTrue("number objects are .equals int",
-            num.equals(1337));
     }
 
     @Test
