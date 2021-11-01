@@ -24,12 +24,15 @@ public class Number implements Input {
     @Override
     public boolean equals(Object o) {
         if(o == this) return true;
-        if(o == null) return false;
-        if(!(o instanceof Number)) return false;
+        return false;
+    }
 
-        Number n = (Number) o;
+    public boolean equals(Number num) {
+        return this.value().equals(num.value());
+    }
 
-        return n.value().equals(this.value());
+    public boolean equals(Integer i) {
+        return this.value().equals(i);
     }
 
     public boolean equals(int i) {
