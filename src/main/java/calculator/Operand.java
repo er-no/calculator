@@ -4,7 +4,7 @@ public abstract class Operand implements Input {
 
     @Override
     public boolean state() {
-        return true;
+        return false;
     }
 
     @Override
@@ -12,5 +12,5 @@ public abstract class Operand implements Input {
         return null;
     }
 
-    abstract Integer evaluation(Number a, Number b);
+    abstract Number evaluation(Number a, Number b);
 }

@@ -1,6 +1,15 @@
 package calculator;
 
 public class Number implements Input {
+    private int value = 0;
+
+    public Number() {
+
+    }
+
+    public Number(int value) {
+        this.value = value;
+    }
 
     @Override
     public boolean state() {
@@ -9,6 +18,21 @@ public class Number implements Input {
 
     @Override
     public Integer value() {
-        return null;
+        return this.value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == this) return true;
+        if(o == null) return false;
+        if(!(o instanceof Number)) return false;
+
+        Number n = (Number) o;
+
+        return n.value().equals(this.value());
+    }
+
+    public boolean equals(int i) {
+        return this.value().equals(i);
     }
 }
