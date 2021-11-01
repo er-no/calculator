@@ -12,6 +12,13 @@ public class InputFactoryTest {
     }
 
     @Test
+    public void passingNumberYieldsThatNumber() {
+        assertEquals("number shall actually yield the correct number",
+            -93,
+            (int) InputFactory.parse("-93").value());
+    }
+
+    @Test
     public void passingSignYieldsOperandClass() {
         assertTrue("plus shall yield Operand",
             InputFactory.parse("+") instanceof Operand);

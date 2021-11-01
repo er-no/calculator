@@ -29,7 +29,7 @@ public class InputFactory {
         } else {
             try {
                 int num = Integer.parseInt(token);
-                return new Number();
+                return new Number(num);
             } catch (NumberFormatException e) {
                 return null;
             }
