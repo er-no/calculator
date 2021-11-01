@@ -1,6 +1,6 @@
 package calculator;
 
 public interface Input {
-    public boolean state();
+    public Operand operand();
     public Integer value();
 }

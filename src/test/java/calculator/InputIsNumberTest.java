@@ -41,4 +41,11 @@ public class InputIsNumberTest {
         assertFalse("number objects are not .equals when different",
             num.equals(42));
     }
+
+    @Test
+    public void numberIsNumberalNotOperand() {
+        var num = new Number(42);
+        assertTrue("number is not operand",
+            num.operand() == null);
+    }
 }

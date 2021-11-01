@@ -7,9 +7,9 @@ import org.junit.Test;
 public class InputIsOperandTest {
 
     @Test
-    public void plusYieldsStateTrue() {
-        assertTrue("operands yields state false",
-        InputFactory.parse("+").state() != true);
+    public void plusIsOperand() {
+        assertTrue("plusses are operands",
+        InputFactory.parse("+").operand() != null);
     }
 
     @Test
@@ -20,9 +20,9 @@ public class InputIsOperandTest {
     }
 
     @Test
-    public void minusYieldsStateTrue() {
-        assertTrue("operands yields state false",
-        InputFactory.parse("-").state() != true);
+    public void minusIsOperand() {
+        assertTrue("minuses are operands",
+        InputFactory.parse("-").operand() != null);
     }
 
     @Test
@@ -33,9 +33,9 @@ public class InputIsOperandTest {
     }
 
     @Test
-    public void asteriskYieldsStateTrue() {
-        assertTrue("operands yields state false",
-        InputFactory.parse("*").state() != true);
+    public void asteriskAreOperand() {
+        assertTrue("asterisks are operands",
+        InputFactory.parse("*").operand() != null);
     }
 
     @Test
@@ -46,9 +46,9 @@ public class InputIsOperandTest {
     }
 
     @Test
-    public void slashYieldsStateTrue() {
-        assertTrue("operands yields state false",
-        InputFactory.parse("/").state() != true);
+    public void slashAreOperand() {
+        assertTrue("slashes are operands",
+        InputFactory.parse("/").operand() != null);
     }
 
     @Test

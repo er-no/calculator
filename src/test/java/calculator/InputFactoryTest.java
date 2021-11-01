@@ -12,9 +12,15 @@ public class InputFactoryTest {
     }
 
     @Test
-    public void passingPlusYieldsOperandClass() {
+    public void passingSignYieldsOperandClass() {
         assertTrue("plus shall yield Operand",
             InputFactory.parse("+") instanceof Operand);
+        assertTrue("minus shall yield Operand",
+            InputFactory.parse("-") instanceof Operand);
+        assertTrue("asterisk shall yield Operand",
+            InputFactory.parse("*") instanceof Operand);
+        assertTrue("slash shall yield Operand",
+            InputFactory.parse("/") instanceof Operand);
     }
 
     @Test
@@ -45,5 +51,11 @@ public class InputFactoryTest {
     public void passingNonsenseYieldsNull() {
         assertTrue("nonsense yields error",
             InputFactory.parse("poej") == null);
+    }
+
+    @Test
+    public void passingNumberFollowedByNonsenseYieldsNull() {
+        assertTrue("nonsense yeilds error even tho numbers",
+            InputFactory.parse("85jwosdpkadg") == null);
     }
 }

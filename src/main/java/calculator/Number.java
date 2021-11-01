@@ -1,10 +1,10 @@
 package calculator;
 
 public class Number implements Input {
-    private int value = 0;
+    private int value;
 
     public Number() {
-
+        this.value = 0;
     }
 
     public Number(int value) {
@@ -12,8 +12,8 @@ public class Number implements Input {
     }
 
     @Override
-    public boolean state() {
-        return false;
+    public Operand operand() {
+        return null;
     }
 
     @Override
