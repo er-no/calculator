@@ -9,6 +9,8 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'jacoco'
+    id 'com.github.spotbugs' version '5.0.0-beta.6'
 }
 
 repositories {
@@ -35,14 +37,19 @@ defaultTasks 'test'
 compileJava.options.encoding = compileTestJava.options.encoding = 'UTF-8'
 
 test {
-  // Log passed/failed tests in the console (see also build/reports/tests):
-  testLogging.events 'passed', 'failed'
-  testLogging.exceptionFormat = 'full' // Full error output for test failures.
-  dependsOn 'cleanTest'  // This causes tests to always be re-run.
+    // Log passed/failed tests in the console (see also build/reports/tests):
+    testLogging.events 'passed', 'failed'
+    testLogging.exceptionFormat = 'full' // Full error output for test failures.
+    dependsOn 'cleanTest'  // This causes tests to always be re-run.
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
 }
 
 jar {
-  manifest.attributes 'Main-Class': application.mainClass
-  destinationDirectory = projectDir
-  archiveFileName = applicationName + ".jar"
+    manifest.attributes 'Main-Class': application.mainClass
+    destinationDirectory = projectDir
+    archiveFileName = applicationName + ".jar"
 }
